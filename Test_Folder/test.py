@@ -8,21 +8,35 @@ class employee():
     def changes(self, new_company_name):
         employee.company_name = new_company_name
 
+    @property #getter
     def info(self):
         print(f"Employee {self.emp_name} works for {self.emp_dept} in company {self.company_name}")
+
+    @info.setter
+    def info(self, empDeatils):
+        new_emp_name = empDeatils[0]
+        new_emp_dept = empDeatils[1]
+
+        self.emp_name = new_emp_name
+        self.emp_dept = new_emp_dept
 
     @staticmethod
     def addition(x,y):
         print(x+y)
 
 emp1 = employee('Baban','IT')
-emp1.info()
+emp1.info = ['Baban', 'CEO']
 
-emp2 = employee('Bob','HR')
-emp2.info()
-emp2.changes('Bob Marley Co')
-emp2.info()
+print(emp1.info)
 
-emp1.info()
 
-emp1.addition(2,4)
+
+
+# emp2 = employee('Bob','HR')
+# emp2.info()
+# emp2.changes('Bob Marley Co')
+# emp2.info()
+
+# emp1.info()
+
+# emp1.addition(2,4)
